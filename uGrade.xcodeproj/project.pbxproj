@@ -3,33 +3,179 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		247FA31324C377880096700E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247FA31224C377880096700E /* AppDelegate.swift */; };
-		247FA31524C377880096700E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247FA31424C377880096700E /* SceneDelegate.swift */; };
-		247FA31824C377880096700E /* uGrade.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 247FA31624C377880096700E /* uGrade.xcdatamodeld */; };
-		247FA31A24C377880096700E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247FA31924C377880096700E /* ContentView.swift */; };
-		247FA31C24C3778C0096700E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 247FA31B24C3778C0096700E /* Assets.xcassets */; };
+		2402E82E24EDEA890007CC90 /* Pro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244EE83A24E8551F004E2D25 /* Pro.swift */; };
+		24121F892515490E0013E5D6 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244EE82B24E8551E004E2D25 /* IAPManager.swift */; };
+		24121F8D251549150013E5D6 /* uGradeProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244EE82D24E8551E004E2D25 /* uGradeProducts.swift */; };
+		242BB6732555B61B00EB5513 /* RemoveAdsWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242BB6722555B61B00EB5513 /* RemoveAdsWatch.swift */; };
+		244EE83F24E85520004E2D25 /* ClassRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244EE81724E8551C004E2D25 /* ClassRow.swift */; };
+		244EE84024E85520004E2D25 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244EE81824E8551C004E2D25 /* Home.swift */; };
+		244EE84224E85520004E2D25 /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244EE81A24E8551C004E2D25 /* Classes.swift */; };
+		244EE84424E85520004E2D25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 244EE81C24E8551C004E2D25 /* Assets.xcassets */; };
+		244EE84524E85520004E2D25 /* EditGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244EE81D24E8551D004E2D25 /* EditGroup.swift */; };
+		244EE84824E85520004E2D25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244EE82024E8551D004E2D25 /* AppDelegate.swift */; };
+		244EE84B24E85520004E2D25 /* NewGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244EE82324E8551D004E2D25 /* NewGroup.swift */; };
+		244EE84C24E85520004E2D25 /* RemoveAds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244EE82424E8551D004E2D25 /* RemoveAds.swift */; };
+		244EE84E24E85520004E2D25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244EE82824E8551E004E2D25 /* ContentView.swift */; };
+		244EE84F24E85520004E2D25 /* GradeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244EE82924E8551E004E2D25 /* GradeRow.swift */; };
+		244EE85124E85520004E2D25 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244EE82B24E8551E004E2D25 /* IAPManager.swift */; };
+		244EE85224E85520004E2D25 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244EE82C24E8551E004E2D25 /* SceneDelegate.swift */; };
+		244EE85324E85520004E2D25 /* uGradeProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244EE82D24E8551E004E2D25 /* uGradeProducts.swift */; };
+		244EE85524E85520004E2D25 /* NewClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244EE82F24E8551F004E2D25 /* NewClass.swift */; };
+		244EE85624E85520004E2D25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 244EE83124E8551F004E2D25 /* LaunchScreen.storyboard */; };
+		244EE85724E85520004E2D25 /* EditGrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244EE83324E8551F004E2D25 /* EditGrade.swift */; };
+		244EE85A24E85520004E2D25 /* NewGrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244EE83824E8551F004E2D25 /* NewGrade.swift */; };
+		244EE85B24E85520004E2D25 /* EditClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244EE83924E8551F004E2D25 /* EditClass.swift */; };
+		244EE85C24E85520004E2D25 /* Pro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244EE83A24E8551F004E2D25 /* Pro.swift */; };
+		244EE85D24E85520004E2D25 /* ClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244EE83B24E85520004E2D25 /* ClassView.swift */; };
+		244EE85E24E85520004E2D25 /* GroupList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244EE83C24E85520004E2D25 /* GroupList.swift */; };
+		244EE85F24E85520004E2D25 /* ColorGen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244EE83D24E85520004E2D25 /* ColorGen.swift */; };
+		244EE86624E85593004E2D25 /* uGrade.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 244EE86424E85593004E2D25 /* uGrade.xcdatamodeld */; };
+		244EE86724E8559F004E2D25 /* uGrade.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 244EE86424E85593004E2D25 /* uGrade.xcdatamodeld */; };
+		244EE87224E856E1004E2D25 /* ColorGen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244EE83D24E85520004E2D25 /* ColorGen.swift */; };
+		244EE88E24E88247004E2D25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 244EE81C24E8551C004E2D25 /* Assets.xcassets */; };
+		244EE88F24E88248004E2D25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 244EE81C24E8551C004E2D25 /* Assets.xcassets */; };
+		2461D6A5255EF21E00E8B29D /* ReuseHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2461D6A4255EF21E00E8B29D /* ReuseHome.swift */; };
+		2461D6B6255F05B600E8B29D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2461D6B5255F05B600E8B29D /* Model.swift */; };
 		247FA31F24C3778C0096700E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 247FA31E24C3778C0096700E /* Preview Assets.xcassets */; };
-		247FA32224C3778C0096700E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 247FA32024C3778C0096700E /* LaunchScreen.storyboard */; };
+		247FA36324C37BDA0096700E /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247FA36224C37BDA0096700E /* CloudKit.framework */; };
+		247FA36524C37C050096700E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247FA36424C37C050096700E /* StoreKit.framework */; };
+		24EB124924C51C7000D0CA59 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24EB124724C51C7000D0CA59 /* Interface.storyboard */; };
+		24EB125224C51C7200D0CA59 /* uGrade Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 24EB125124C51C7200D0CA59 /* uGrade Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		24EB125F24C51C7300D0CA59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24EB125E24C51C7300D0CA59 /* Assets.xcassets */; };
+		24EB126224C51C7300D0CA59 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24EB126124C51C7300D0CA59 /* Preview Assets.xcassets */; };
+		24EB126624C51C7300D0CA59 /* uGrade Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 24EB124524C51C7000D0CA59 /* uGrade Watch.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		24EB127924C51CC500D0CA59 /* GroupListWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EB126E24C51CC400D0CA59 /* GroupListWatch.swift */; };
+		24EB127A24C51CC500D0CA59 /* NewGradeWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EB126F24C51CC400D0CA59 /* NewGradeWatch.swift */; };
+		24EB127B24C51CC500D0CA59 /* NewGroupWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EB127024C51CC400D0CA59 /* NewGroupWatch.swift */; };
+		24EB127C24C51CC500D0CA59 /* EditGroupWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EB127124C51CC400D0CA59 /* EditGroupWatch.swift */; };
+		24EB127D24C51CC500D0CA59 /* ClassRowWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EB127224C51CC400D0CA59 /* ClassRowWatch.swift */; };
+		24EB127E24C51CC500D0CA59 /* ClassViewWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EB127324C51CC400D0CA59 /* ClassViewWatch.swift */; };
+		24EB128024C51CC500D0CA59 /* EditClassWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EB127524C51CC400D0CA59 /* EditClassWatch.swift */; };
+		24EB128124C51CC500D0CA59 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EB127624C51CC500D0CA59 /* MainView.swift */; };
+		24EB128224C51CC500D0CA59 /* NewClassWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EB127724C51CC500D0CA59 /* NewClassWatch.swift */; };
+		24EB128324C51CC500D0CA59 /* EditGradeWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EB127824C51CC500D0CA59 /* EditGradeWatch.swift */; };
+		24EB128624C51CE900D0CA59 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EB128424C51CE800D0CA59 /* ExtensionDelegate.swift */; };
+		24EB128724C51CE900D0CA59 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EB128524C51CE800D0CA59 /* HostingController.swift */; };
+		24EB128F24C51D6400D0CA59 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EB128E24C51D6300D0CA59 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		24EB125324C51C7200D0CA59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 247FA30724C377880096700E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24EB125024C51C7200D0CA59;
+			remoteInfo = "uGrade Watch Extension";
+		};
+		24EB126424C51C7300D0CA59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 247FA30724C377880096700E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24EB124424C51C7000D0CA59;
+			remoteInfo = "uGrade Watch";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		24EB11BA24C5085C00D0CA59 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				24EB126624C51C7300D0CA59 /* uGrade Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24EB126A24C51C7300D0CA59 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				24EB125224C51C7200D0CA59 /* uGrade Watch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		24121F822515461A0013E5D6 /* uGrade Watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "uGrade Watch.entitlements"; sourceTree = "<group>"; };
+		242BB66E2555AB0100EB5513 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		242BB6722555B61B00EB5513 /* RemoveAdsWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveAdsWatch.swift; sourceTree = "<group>"; };
+		244EE81724E8551C004E2D25 /* ClassRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassRow.swift; sourceTree = "<group>"; };
+		244EE81824E8551C004E2D25 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; wrapsLines = 1; };
+		244EE81A24E8551C004E2D25 /* Classes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
+		244EE81C24E8551C004E2D25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		244EE81D24E8551D004E2D25 /* EditGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGroup.swift; sourceTree = "<group>"; };
+		244EE82024E8551D004E2D25 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		244EE82324E8551D004E2D25 /* NewGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGroup.swift; sourceTree = "<group>"; };
+		244EE82424E8551D004E2D25 /* RemoveAds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveAds.swift; sourceTree = "<group>"; };
+		244EE82524E8551D004E2D25 /* uGrade.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = uGrade.entitlements; sourceTree = "<group>"; };
+		244EE82824E8551E004E2D25 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		244EE82924E8551E004E2D25 /* GradeRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeRow.swift; sourceTree = "<group>"; };
+		244EE82B24E8551E004E2D25 /* IAPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
+		244EE82C24E8551E004E2D25 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		244EE82D24E8551E004E2D25 /* uGradeProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = uGradeProducts.swift; sourceTree = "<group>"; };
+		244EE82F24E8551F004E2D25 /* NewClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewClass.swift; sourceTree = "<group>"; };
+		244EE83224E8551F004E2D25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		244EE83324E8551F004E2D25 /* EditGrade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGrade.swift; sourceTree = "<group>"; };
+		244EE83824E8551F004E2D25 /* NewGrade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGrade.swift; sourceTree = "<group>"; };
+		244EE83924E8551F004E2D25 /* EditClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditClass.swift; sourceTree = "<group>"; };
+		244EE83A24E8551F004E2D25 /* Pro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pro.swift; sourceTree = "<group>"; };
+		244EE83B24E85520004E2D25 /* ClassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassView.swift; sourceTree = "<group>"; };
+		244EE83C24E85520004E2D25 /* GroupList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupList.swift; sourceTree = "<group>"; };
+		244EE83D24E85520004E2D25 /* ColorGen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorGen.swift; sourceTree = "<group>"; };
+		244EE86524E85593004E2D25 /* uGrade.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = uGrade.xcdatamodel; sourceTree = "<group>"; };
+		244EE87E24E87C6D004E2D25 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2461D6A4255EF21E00E8B29D /* ReuseHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseHome.swift; sourceTree = "<group>"; };
+		2461D6B5255F05B600E8B29D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		247AAB672563016300B593E2 /* StoreKitTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKitTest.framework; path = Developer/Library/Frameworks/StoreKitTest.framework; sourceTree = SDKROOT; };
 		247FA30F24C377880096700E /* uGrade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uGrade.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		247FA31224C377880096700E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		247FA31424C377880096700E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		247FA31724C377880096700E /* uGrade.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = uGrade.xcdatamodel; sourceTree = "<group>"; };
-		247FA31924C377880096700E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		247FA31B24C3778C0096700E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		247FA31E24C3778C0096700E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		247FA32124C3778C0096700E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		247FA32324C3778C0096700E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		247FA36224C37BDA0096700E /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		247FA36424C37C050096700E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		24EB11DE24C50B9D00D0CA59 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.0.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		24EB124524C51C7000D0CA59 /* uGrade Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uGrade Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		24EB124824C51C7000D0CA59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		24EB124C24C51C7200D0CA59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24EB125124C51C7200D0CA59 /* uGrade Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "uGrade Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		24EB125E24C51C7300D0CA59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		24EB126124C51C7300D0CA59 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		24EB126324C51C7300D0CA59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24EB126E24C51CC400D0CA59 /* GroupListWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupListWatch.swift; sourceTree = "<group>"; };
+		24EB126F24C51CC400D0CA59 /* NewGradeWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGradeWatch.swift; sourceTree = "<group>"; };
+		24EB127024C51CC400D0CA59 /* NewGroupWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGroupWatch.swift; sourceTree = "<group>"; };
+		24EB127124C51CC400D0CA59 /* EditGroupWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGroupWatch.swift; sourceTree = "<group>"; };
+		24EB127224C51CC400D0CA59 /* ClassRowWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassRowWatch.swift; sourceTree = "<group>"; };
+		24EB127324C51CC400D0CA59 /* ClassViewWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassViewWatch.swift; sourceTree = "<group>"; };
+		24EB127524C51CC400D0CA59 /* EditClassWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditClassWatch.swift; sourceTree = "<group>"; };
+		24EB127624C51CC500D0CA59 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		24EB127724C51CC500D0CA59 /* NewClassWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewClassWatch.swift; sourceTree = "<group>"; };
+		24EB127824C51CC500D0CA59 /* EditGradeWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditGradeWatch.swift; sourceTree = "<group>"; };
+		24EB128424C51CE800D0CA59 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		24EB128524C51CE800D0CA59 /* HostingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		24EB128824C51CFA00D0CA59 /* uGrade Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "uGrade Watch Extension.entitlements"; sourceTree = "<group>"; };
+		24EB128E24C51D6300D0CA59 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		247FA30C24C377880096700E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				247FA36324C37BDA0096700E /* CloudKit.framework in Frameworks */,
+				247FA36524C37C050096700E /* StoreKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24EB124E24C51C7200D0CA59 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,11 +185,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		244EE83024E8551F004E2D25 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				244EE83124E8551F004E2D25 /* LaunchScreen.storyboard */,
+			);
+			path = Base.lproj;
+			sourceTree = "<group>";
+		};
 		247FA30624C377880096700E = {
 			isa = PBXGroup;
 			children = (
+				242BB66E2555AB0100EB5513 /* Configuration.storekit */,
 				247FA31124C377880096700E /* uGrade */,
+				24EB124624C51C7000D0CA59 /* uGrade Watch */,
+				24EB125524C51C7200D0CA59 /* uGrade Watch Extension */,
 				247FA31024C377880096700E /* Products */,
+				247FA36124C37BDA0096700E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,6 +209,8 @@
 			isa = PBXGroup;
 			children = (
 				247FA30F24C377880096700E /* uGrade.app */,
+				24EB124524C51C7000D0CA59 /* uGrade Watch.app */,
+				24EB125124C51C7200D0CA59 /* uGrade Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,13 +218,33 @@
 		247FA31124C377880096700E /* uGrade */ = {
 			isa = PBXGroup;
 			children = (
-				247FA31224C377880096700E /* AppDelegate.swift */,
-				247FA31424C377880096700E /* SceneDelegate.swift */,
-				247FA31924C377880096700E /* ContentView.swift */,
-				247FA31B24C3778C0096700E /* Assets.xcassets */,
-				247FA32024C3778C0096700E /* LaunchScreen.storyboard */,
-				247FA32324C3778C0096700E /* Info.plist */,
-				247FA31624C377880096700E /* uGrade.xcdatamodeld */,
+				244EE86424E85593004E2D25 /* uGrade.xcdatamodeld */,
+				244EE83A24E8551F004E2D25 /* Pro.swift */,
+				244EE82024E8551D004E2D25 /* AppDelegate.swift */,
+				244EE81C24E8551C004E2D25 /* Assets.xcassets */,
+				244EE83024E8551F004E2D25 /* Base.lproj */,
+				244EE81A24E8551C004E2D25 /* Classes.swift */,
+				244EE81724E8551C004E2D25 /* ClassRow.swift */,
+				244EE83B24E85520004E2D25 /* ClassView.swift */,
+				244EE83D24E85520004E2D25 /* ColorGen.swift */,
+				244EE82824E8551E004E2D25 /* ContentView.swift */,
+				244EE83924E8551F004E2D25 /* EditClass.swift */,
+				244EE83324E8551F004E2D25 /* EditGrade.swift */,
+				244EE81D24E8551D004E2D25 /* EditGroup.swift */,
+				244EE82924E8551E004E2D25 /* GradeRow.swift */,
+				244EE83C24E85520004E2D25 /* GroupList.swift */,
+				244EE81824E8551C004E2D25 /* Home.swift */,
+				2461D6A4255EF21E00E8B29D /* ReuseHome.swift */,
+				244EE82B24E8551E004E2D25 /* IAPManager.swift */,
+				244EE87E24E87C6D004E2D25 /* Info.plist */,
+				244EE82F24E8551F004E2D25 /* NewClass.swift */,
+				244EE83824E8551F004E2D25 /* NewGrade.swift */,
+				244EE82324E8551D004E2D25 /* NewGroup.swift */,
+				244EE82424E8551D004E2D25 /* RemoveAds.swift */,
+				244EE82C24E8551E004E2D25 /* SceneDelegate.swift */,
+				2461D6B5255F05B600E8B29D /* Model.swift */,
+				244EE82524E8551D004E2D25 /* uGrade.entitlements */,
+				244EE82D24E8551E004E2D25 /* uGradeProducts.swift */,
 				247FA31D24C3778C0096700E /* Preview Content */,
 			);
 			path = uGrade;
@@ -74,6 +254,60 @@
 			isa = PBXGroup;
 			children = (
 				247FA31E24C3778C0096700E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		247FA36124C37BDA0096700E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				247AAB672563016300B593E2 /* StoreKitTest.framework */,
+				24EB11DE24C50B9D00D0CA59 /* CloudKit.framework */,
+				247FA36424C37C050096700E /* StoreKit.framework */,
+				247FA36224C37BDA0096700E /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		24EB124624C51C7000D0CA59 /* uGrade Watch */ = {
+			isa = PBXGroup;
+			children = (
+				24121F822515461A0013E5D6 /* uGrade Watch.entitlements */,
+				24EB124724C51C7000D0CA59 /* Interface.storyboard */,
+				24EB124C24C51C7200D0CA59 /* Info.plist */,
+			);
+			path = "uGrade Watch";
+			sourceTree = "<group>";
+		};
+		24EB125524C51C7200D0CA59 /* uGrade Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				24EB128824C51CFA00D0CA59 /* uGrade Watch Extension.entitlements */,
+				24EB128424C51CE800D0CA59 /* ExtensionDelegate.swift */,
+				24EB128E24C51D6300D0CA59 /* ContentView.swift */,
+				24EB128524C51CE800D0CA59 /* HostingController.swift */,
+				24EB127224C51CC400D0CA59 /* ClassRowWatch.swift */,
+				24EB127324C51CC400D0CA59 /* ClassViewWatch.swift */,
+				24EB127524C51CC400D0CA59 /* EditClassWatch.swift */,
+				24EB127824C51CC500D0CA59 /* EditGradeWatch.swift */,
+				24EB127124C51CC400D0CA59 /* EditGroupWatch.swift */,
+				24EB126E24C51CC400D0CA59 /* GroupListWatch.swift */,
+				24EB127624C51CC500D0CA59 /* MainView.swift */,
+				24EB127724C51CC500D0CA59 /* NewClassWatch.swift */,
+				24EB126F24C51CC400D0CA59 /* NewGradeWatch.swift */,
+				24EB127024C51CC400D0CA59 /* NewGroupWatch.swift */,
+				242BB6722555B61B00EB5513 /* RemoveAdsWatch.swift */,
+				24EB125E24C51C7300D0CA59 /* Assets.xcassets */,
+				24EB126324C51C7300D0CA59 /* Info.plist */,
+				24EB126024C51C7300D0CA59 /* Preview Content */,
+			);
+			path = "uGrade Watch Extension";
+			sourceTree = "<group>";
+		};
+		24EB126024C51C7300D0CA59 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				24EB126124C51C7300D0CA59 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -88,15 +322,51 @@
 				247FA30B24C377880096700E /* Sources */,
 				247FA30C24C377880096700E /* Frameworks */,
 				247FA30D24C377880096700E /* Resources */,
+				24EB11BA24C5085C00D0CA59 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				24EB126524C51C7300D0CA59 /* PBXTargetDependency */,
 			);
 			name = uGrade;
 			productName = uGrade;
 			productReference = 247FA30F24C377880096700E /* uGrade.app */;
 			productType = "com.apple.product-type.application";
+		};
+		24EB124424C51C7000D0CA59 /* uGrade Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24EB126B24C51C7300D0CA59 /* Build configuration list for PBXNativeTarget "uGrade Watch" */;
+			buildPhases = (
+				24EB124324C51C7000D0CA59 /* Resources */,
+				24EB126A24C51C7300D0CA59 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				24EB125424C51C7200D0CA59 /* PBXTargetDependency */,
+			);
+			name = "uGrade Watch";
+			productName = "uGrade Watch";
+			productReference = 24EB124524C51C7000D0CA59 /* uGrade Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		24EB125024C51C7200D0CA59 /* uGrade Watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24EB126724C51C7300D0CA59 /* Build configuration list for PBXNativeTarget "uGrade Watch Extension" */;
+			buildPhases = (
+				24EB124D24C51C7200D0CA59 /* Sources */,
+				24EB124E24C51C7200D0CA59 /* Frameworks */,
+				24EB124F24C51C7200D0CA59 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "uGrade Watch Extension";
+			productName = "uGrade Watch Extension";
+			productReference = 24EB125124C51C7200D0CA59 /* uGrade Watch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -104,12 +374,20 @@
 		247FA30724C377880096700E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Ben Fein";
 				TargetAttributes = {
 					247FA30E24C377880096700E = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
+					};
+					24EB124424C51C7000D0CA59 = {
+						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1160;
+					};
+					24EB125024C51C7200D0CA59 = {
+						CreatedOnToolsVersion = 12.0;
 					};
 				};
 			};
@@ -127,6 +405,8 @@
 			projectRoot = "";
 			targets = (
 				247FA30E24C377880096700E /* uGrade */,
+				24EB124424C51C7000D0CA59 /* uGrade Watch */,
+				24EB125024C51C7200D0CA59 /* uGrade Watch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -136,9 +416,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				247FA32224C3778C0096700E /* LaunchScreen.storyboard in Resources */,
+				244EE84424E85520004E2D25 /* Assets.xcassets in Resources */,
+				244EE85624E85520004E2D25 /* LaunchScreen.storyboard in Resources */,
 				247FA31F24C3778C0096700E /* Preview Assets.xcassets in Resources */,
-				247FA31C24C3778C0096700E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24EB124324C51C7000D0CA59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				244EE88F24E88248004E2D25 /* Assets.xcassets in Resources */,
+				24EB124924C51C7000D0CA59 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24EB124F24C51C7200D0CA59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24EB126224C51C7300D0CA59 /* Preview Assets.xcassets in Resources */,
+				244EE88E24E88247004E2D25 /* Assets.xcassets in Resources */,
+				24EB125F24C51C7300D0CA59 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,22 +448,89 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				247FA31324C377880096700E /* AppDelegate.swift in Sources */,
-				247FA31524C377880096700E /* SceneDelegate.swift in Sources */,
-				247FA31A24C377880096700E /* ContentView.swift in Sources */,
-				247FA31824C377880096700E /* uGrade.xcdatamodeld in Sources */,
+				244EE85124E85520004E2D25 /* IAPManager.swift in Sources */,
+				2461D6A5255EF21E00E8B29D /* ReuseHome.swift in Sources */,
+				244EE84824E85520004E2D25 /* AppDelegate.swift in Sources */,
+				244EE85D24E85520004E2D25 /* ClassView.swift in Sources */,
+				244EE85C24E85520004E2D25 /* Pro.swift in Sources */,
+				244EE84E24E85520004E2D25 /* ContentView.swift in Sources */,
+				244EE84024E85520004E2D25 /* Home.swift in Sources */,
+				244EE85724E85520004E2D25 /* EditGrade.swift in Sources */,
+				244EE84524E85520004E2D25 /* EditGroup.swift in Sources */,
+				244EE84224E85520004E2D25 /* Classes.swift in Sources */,
+				244EE85524E85520004E2D25 /* NewClass.swift in Sources */,
+				244EE85A24E85520004E2D25 /* NewGrade.swift in Sources */,
+				244EE85B24E85520004E2D25 /* EditClass.swift in Sources */,
+				244EE85324E85520004E2D25 /* uGradeProducts.swift in Sources */,
+				2461D6B6255F05B600E8B29D /* Model.swift in Sources */,
+				244EE85224E85520004E2D25 /* SceneDelegate.swift in Sources */,
+				244EE83F24E85520004E2D25 /* ClassRow.swift in Sources */,
+				244EE84F24E85520004E2D25 /* GradeRow.swift in Sources */,
+				244EE85F24E85520004E2D25 /* ColorGen.swift in Sources */,
+				244EE84C24E85520004E2D25 /* RemoveAds.swift in Sources */,
+				244EE84B24E85520004E2D25 /* NewGroup.swift in Sources */,
+				244EE85E24E85520004E2D25 /* GroupList.swift in Sources */,
+				244EE86624E85593004E2D25 /* uGrade.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24EB124D24C51C7200D0CA59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24121F892515490E0013E5D6 /* IAPManager.swift in Sources */,
+				24121F8D251549150013E5D6 /* uGradeProducts.swift in Sources */,
+				24EB127B24C51CC500D0CA59 /* NewGroupWatch.swift in Sources */,
+				242BB6732555B61B00EB5513 /* RemoveAdsWatch.swift in Sources */,
+				24EB128624C51CE900D0CA59 /* ExtensionDelegate.swift in Sources */,
+				24EB128724C51CE900D0CA59 /* HostingController.swift in Sources */,
+				24EB128324C51CC500D0CA59 /* EditGradeWatch.swift in Sources */,
+				24EB128124C51CC500D0CA59 /* MainView.swift in Sources */,
+				24EB128F24C51D6400D0CA59 /* ContentView.swift in Sources */,
+				24EB127A24C51CC500D0CA59 /* NewGradeWatch.swift in Sources */,
+				2402E82E24EDEA890007CC90 /* Pro.swift in Sources */,
+				24EB127E24C51CC500D0CA59 /* ClassViewWatch.swift in Sources */,
+				244EE87224E856E1004E2D25 /* ColorGen.swift in Sources */,
+				24EB127D24C51CC500D0CA59 /* ClassRowWatch.swift in Sources */,
+				244EE86724E8559F004E2D25 /* uGrade.xcdatamodeld in Sources */,
+				24EB127924C51CC500D0CA59 /* GroupListWatch.swift in Sources */,
+				24EB128224C51CC500D0CA59 /* NewClassWatch.swift in Sources */,
+				24EB128024C51CC500D0CA59 /* EditClassWatch.swift in Sources */,
+				24EB127C24C51CC500D0CA59 /* EditGroupWatch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		24EB125424C51C7200D0CA59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24EB125024C51C7200D0CA59 /* uGrade Watch Extension */;
+			targetProxy = 24EB125324C51C7200D0CA59 /* PBXContainerItemProxy */;
+		};
+		24EB126524C51C7300D0CA59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 24EB124424C51C7000D0CA59 /* uGrade Watch */;
+			targetProxy = 24EB126424C51C7300D0CA59 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
-		247FA32024C3778C0096700E /* LaunchScreen.storyboard */ = {
+		244EE83124E8551F004E2D25 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				247FA32124C3778C0096700E /* Base */,
+				244EE83224E8551F004E2D25 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		24EB124724C51C7000D0CA59 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24EB124824C51C7000D0CA59 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -196,6 +562,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -256,6 +623,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -288,17 +656,26 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = uGrade/uGrade.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 75;
 				DEVELOPMENT_ASSET_PATHS = "\"uGrade/Preview Content\"";
 				DEVELOPMENT_TEAM = JBRKK98ZG9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = uGrade/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.benfein.uGrade;
+				MARKETING_VERSION = 12.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.benfein.ugrade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -308,19 +685,142 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = uGrade/uGrade.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 75;
 				DEVELOPMENT_ASSET_PATHS = "\"uGrade/Preview Content\"";
 				DEVELOPMENT_TEAM = JBRKK98ZG9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = uGrade/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.benfein.uGrade;
+				MARKETING_VERSION = 12.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.benfein.ugrade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		24EB126824C51C7300D0CA59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "uGrade Watch Extension/uGrade Watch Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 75;
+				DEVELOPMENT_ASSET_PATHS = "\"uGrade Watch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = JBRKK98ZG9;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "uGrade Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 12.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.benfein.ugrade.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Debug;
+		};
+		24EB126924C51C7300D0CA59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "uGrade Watch Extension/uGrade Watch Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 75;
+				DEVELOPMENT_ASSET_PATHS = "\"uGrade Watch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = JBRKK98ZG9;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "uGrade Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 12.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.benfein.ugrade.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Release;
+		};
+		24EB126C24C51C7300D0CA59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "uGrade Watch/uGrade Watch.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 75;
+				DEVELOPMENT_TEAM = JBRKK98ZG9;
+				IBSC_MODULE = uGrade_Watch_Extension;
+				INFOPLIST_FILE = "uGrade Watch/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MARKETING_VERSION = 12.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.benfein.ugrade.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Debug;
+		};
+		24EB126D24C51C7300D0CA59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "uGrade Watch/uGrade Watch.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 75;
+				DEVELOPMENT_TEAM = JBRKK98ZG9;
+				IBSC_MODULE = uGrade_Watch_Extension;
+				INFOPLIST_FILE = "uGrade Watch/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MARKETING_VERSION = 12.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.benfein.ugrade.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Release;
 		};
@@ -345,15 +845,33 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		24EB126724C51C7300D0CA59 /* Build configuration list for PBXNativeTarget "uGrade Watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24EB126824C51C7300D0CA59 /* Debug */,
+				24EB126924C51C7300D0CA59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24EB126B24C51C7300D0CA59 /* Build configuration list for PBXNativeTarget "uGrade Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24EB126C24C51C7300D0CA59 /* Debug */,
+				24EB126D24C51C7300D0CA59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		247FA31624C377880096700E /* uGrade.xcdatamodeld */ = {
+		244EE86424E85593004E2D25 /* uGrade.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				247FA31724C377880096700E /* uGrade.xcdatamodel */,
+				244EE86524E85593004E2D25 /* uGrade.xcdatamodel */,
 			);
-			currentVersion = 247FA31724C377880096700E /* uGrade.xcdatamodel */;
+			currentVersion = 244EE86524E85593004E2D25 /* uGrade.xcdatamodel */;
 			path = uGrade.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
