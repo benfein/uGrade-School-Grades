@@ -9,6 +9,6 @@
 import SwiftUI
 import Combine
 class Pro: ObservableObject {
-    @Published var dis = false
+    @Published var disable = false
     
 }

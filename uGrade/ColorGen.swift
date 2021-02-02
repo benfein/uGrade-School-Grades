@@ -5,7 +5,6 @@
 //  Created by Ben Fein on 6/9/20.
 //  Copyright © 2020 Ben Fein. All rights reserved.
 //
-
 import Foundation
 import SwiftUI
 class ColorGen {
@@ -23,7 +22,6 @@ class ColorGen {
         }
         else if(grade < 59.99 && grade >= 0){
                 return Color.red
-            
         } else {
             return Color.gray
         }

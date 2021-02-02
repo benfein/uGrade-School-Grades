@@ -11,7 +11,7 @@ import CloudKit
 import StoreKit
 var idcode = UUID()
 struct HomeWatch: View {
-    @EnvironmentObject var dis: Pro
+    @EnvironmentObject var proPurchased: Pro
     
     var managedObjectContext = (WKExtension.shared().delegate as! ExtensionDelegate).persistentContainer.viewContext
     var sem = [String]()
@@ -33,7 +33,7 @@ struct HomeWatch: View {
         let currentYearInString = format.string(from: currentDate)
         sem.append("")
         sem.append("No Term")
-        for i in stride(from: Int(currentYearInString)! + 4, through: Int(currentYearInString)!, by: -1) {
+        for i in stride(from: 2030, through: 2010, by: -1) {
             sem.append("Fall \(i)")
             sem.append("Summer \(i)")
             sem.append("Spring \(i)")
@@ -45,9 +45,9 @@ struct HomeWatch: View {
         productsStore.initializeProducts()
         if(self.productsStore.products.count > 0){
             if(self.clas.count >= 3 && self.productsStore.products[0].status() == false){
-                self.dis.dis = true
+                self.proPurchased.disable = true
             } else{
-                self.dis.dis = false
+                self.proPurchased.disable = false
             }
         }
         
@@ -64,7 +64,7 @@ struct HomeWatch: View {
         VStack{
            
                 VStack{
-                    if(self.dis.dis == false){
+                    if(self.proPurchased.disable == false){
                     NavigationLink(destination: NewClassWatch().environment(\.managedObjectContext, self.managedObjectContext) ){
                             Text("New Course")
                         
@@ -118,7 +118,7 @@ struct HomeWatch: View {
                                 } else{
                                     
                                     
-                                    NavigationLink(destination: GroupListWatch(idas: cl.id!,names: cl.classname!,grass: cl)) {
+                                    NavigationLink(destination: GroupListWatch(idas: cl.id!,names: cl.classname!,grass: cl, product: productsStore).environmentObject(proPurchased)) {
                                         ClassRowWatch(className: "\(cl.classname!)", classGrade: "\(cl.grade!)", id: cl.id!)
                                     }
                                     

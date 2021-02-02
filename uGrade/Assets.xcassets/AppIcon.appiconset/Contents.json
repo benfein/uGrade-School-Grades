@@ -1,115 +1,115 @@
 {
   "images" : [
     {
-      "filename" : "ugrade-7.jpg",
+      "filename" : "1024-31.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
-      "filename" : "ugrade-8.jpg",
+      "filename" : "1024-30.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "20x20"
     },
     {
-      "filename" : "ugrade-9.jpg",
+      "filename" : "1024-29.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "ugrade-10.jpg",
+      "filename" : "1024-28.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "29x29"
     },
     {
-      "filename" : "ugrade-11.jpg",
+      "filename" : "1024-27.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "ugrade-12.jpg",
+      "filename" : "120-1.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "40x40"
     },
     {
-      "filename" : "ugrade-13.jpg",
+      "filename" : "120.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
-      "filename" : "ugrade-14.jpg",
+      "filename" : "180.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"
     },
     {
-      "filename" : "ugrade-15.jpg",
+      "filename" : "1024-26.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "20x20"
     },
     {
-      "filename" : "ugrade-6.jpg",
+      "filename" : "1024-25.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
-      "filename" : "ugrade-16.jpg",
+      "filename" : "1024-24.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "29x29"
     },
     {
-      "filename" : "ugrade-17.jpg",
+      "filename" : "1024-23.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "ugrade-5.jpg",
+      "filename" : "1024-22.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "40x40"
     },
     {
-      "filename" : "ugrade-4.jpg",
+      "filename" : "1024-21.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "ugrade-3.jpg",
+      "filename" : "1024-20.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "76x76"
     },
     {
-      "filename" : "ugrade-2.jpg",
+      "filename" : "152.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "76x76"
     },
     {
-      "filename" : "ugrade-1.jpg",
+      "filename" : "167.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "83.5x83.5"
     },
     {
-      "filename" : "ugrade.jpg",
+      "filename" : "1024-19.png",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"
     },
     {
-      "filename" : "ugrade-28.jpg",
+      "filename" : "1024-18.png",
       "idiom" : "watch",
       "role" : "notificationCenter",
       "scale" : "2x",
@@ -117,7 +117,7 @@
       "subtype" : "38mm"
     },
     {
-      "filename" : "ugrade-27.jpg",
+      "filename" : "1024-17.png",
       "idiom" : "watch",
       "role" : "notificationCenter",
       "scale" : "2x",
@@ -125,21 +125,21 @@
       "subtype" : "42mm"
     },
     {
-      "filename" : "ugrade-26.jpg",
+      "filename" : "1024-16.png",
       "idiom" : "watch",
       "role" : "companionSettings",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "ugrade-25.jpg",
+      "filename" : "1024-15.png",
       "idiom" : "watch",
       "role" : "companionSettings",
       "scale" : "3x",
       "size" : "29x29"
     },
     {
-      "filename" : "ugrade-24.jpg",
+      "filename" : "1024-12.png",
       "idiom" : "watch",
       "role" : "appLauncher",
       "scale" : "2x",
@@ -147,7 +147,7 @@
       "subtype" : "38mm"
     },
     {
-      "filename" : "ugrade-23.jpg",
+      "filename" : "1024-13.png",
       "idiom" : "watch",
       "role" : "appLauncher",
       "scale" : "2x",
@@ -155,7 +155,7 @@
       "subtype" : "40mm"
     },
     {
-      "filename" : "ugrade-22.jpg",
+      "filename" : "1024-14.png",
       "idiom" : "watch",
       "role" : "appLauncher",
       "scale" : "2x",
@@ -163,7 +163,7 @@
       "subtype" : "44mm"
     },
     {
-      "filename" : "ugrade-21.jpg",
+      "filename" : "1024-11.png",
       "idiom" : "watch",
       "role" : "quickLook",
       "scale" : "2x",
@@ -171,7 +171,7 @@
       "subtype" : "38mm"
     },
     {
-      "filename" : "ugrade-20.jpg",
+      "filename" : "1024-10.png",
       "idiom" : "watch",
       "role" : "quickLook",
       "scale" : "2x",
@@ -179,7 +179,7 @@
       "subtype" : "42mm"
     },
     {
-      "filename" : "ugrade-19.jpg",
+      "filename" : "1024-9.png",
       "idiom" : "watch",
       "role" : "quickLook",
       "scale" : "2x",
@@ -187,67 +187,67 @@
       "subtype" : "44mm"
     },
     {
-      "filename" : "ugrade-18.jpg",
+      "filename" : "1024-8.png",
       "idiom" : "watch-marketing",
       "scale" : "1x",
       "size" : "1024x1024"
     },
     {
-      "filename" : "roundeduGrade-9.png",
+      "filename" : "1024-7.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "16x16"
     },
     {
-      "filename" : "roundeduGrade-8.png",
+      "filename" : "1024-6.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "16x16"
     },
     {
-      "filename" : "roundeduGrade-7.png",
+      "filename" : "1024-5.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "32x32"
     },
     {
-      "filename" : "roundeduGrade-6.png",
+      "filename" : "1024-4.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "32x32"
     },
     {
-      "filename" : "roundeduGrade-5.png",
+      "filename" : "1024-2.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "128x128"
     },
     {
-      "filename" : "roundeduGrade-4.png",
+      "filename" : "1024-3.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "128x128"
     },
     {
-      "filename" : "roundeduGrade-3.png",
+      "filename" : "1024-1.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "256x256"
     },
     {
-      "filename" : "roundeduGrade-2.png",
+      "filename" : "512-1.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "256x256"
     },
     {
-      "filename" : "roundeduGrade-1.png",
+      "filename" : "512.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "512x512"
     },
     {
-      "filename" : "roundeduGrade.png",
+      "filename" : "1024.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"

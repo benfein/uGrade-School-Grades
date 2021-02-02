@@ -23,7 +23,7 @@ struct NewClassWatch: View {
         format.setLocalizedDateFormatFromTemplate("YYYY")
         let currentYearInString = format.string(from: currentDate)
         sem.append("No Term")
-        for i in Int(currentYearInString)! ... Int(currentYearInString)! + 4 {
+        for i in Int(currentYearInString)! - 4 ... Int(currentYearInString)! + 4 {
             sem.append("Spring \(i)")
             sem.append("Summer \(i)")
             sem.append("Fall \(i)")

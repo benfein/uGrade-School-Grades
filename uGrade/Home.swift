@@ -11,56 +11,87 @@ import CoreData
 import StoreKit
 var idcode: UUID = UUID()
 
-
-
 struct Home: View {
 
     @EnvironmentObject var model: Model
-
-    @EnvironmentObject var dis: Pro
-    @State var shownew = false
-    @State var showpro = false
-    
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    @State var hide = false
-    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    var color = ColorGen()
     var products: [SKProduct] = []
     @ObservedObject var productsStore : ProductsStore
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    var contact = Classes()
-    var color = ColorGen()
-    var fetchRequest: FetchRequest<Classes>
-    var clas: FetchedResults<Classes> {(fetchRequest.wrappedValue)}
-    var sem = [String]()
-    init(product: ProductsStore) {
-        productsStore = product
-        
-        fetchRequest = FetchRequest<Classes>(entity: Classes.entity(), sortDescriptors: [NSSortDescriptor(key: "classname", ascending: true)], predicate: NSPredicate(format: "isGroup == \(false)"))
-        //UITableViewCell.appearance().selectionStyle = .none
-        
+    @EnvironmentObject var proPurchased: Pro
+    @State var showNewClass = false
+    @State var showGetPro = false
+    @State var showChangeLetters = false
+    @State var newWeight = false
+    var terms = [String]()
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var allClassesFetchRequest: FetchRequest<Classes>
+    var allClassesFetchedResults: FetchedResults<Classes> {
+        (allClassesFetchRequest.wrappedValue)
     }
-    
+    var allGroupsFetchRequest: FetchRequest<Classes>
+    var allGroupsFetchedResults: FetchedResults<Classes> {
+        (allGroupsFetchRequest.wrappedValue)
+    }
+    var allGradesFetchRequest: FetchRequest<Grades>
+    var allGradesFetchedResults: FetchedResults<Grades> {
+        (allGradesFetchRequest.wrappedValue)
+    }
+    @State var letters = [["93","100","A"], ["90","93","A-"], ["87","90", "B+"],["83","87","B"],["80","83","B-"], ["77","80", "C+"], ["71","77", "C"], ["67","71","C-"], ["63","67","D+"], ["60", "63","D-"], ["0","60","F"]]
+    @State var letterGen: PercentToGrade = .init(letter: [["90","93","A"]])
+    init(product: ProductsStore) {
+
+        productsStore = product
+        allClassesFetchRequest = FetchRequest<Classes>(entity: Classes.entity(), sortDescriptors: [NSSortDescriptor(key: "classname", ascending: true, selector: #selector(NSString.localizedStandardCompare))], predicate: NSPredicate(format: "isGroup == \(false)"))
+        allGroupsFetchRequest = FetchRequest<Classes>(entity: Classes.entity(), sortDescriptors: [NSSortDescriptor(key: "classname", ascending: true, selector: #selector(NSString.localizedStandardCompare))], predicate: NSPredicate(format: "isGroup == \(true)"))
+        allGradesFetchRequest = FetchRequest<Grades>(entity: Grades.entity(), sortDescriptors: [NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.localizedStandardCompare))])
+
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.setLocalizedDateFormatFromTemplate("YYYY")
+        let currentYearInString = dateFormatter.string(from: currentDate)
+        terms.append("")
+        terms.append("No Term")
+        for i in stride(from: Int(currentYearInString)! + 4, through: Int(currentYearInString)!, by: -1) {
+            terms.append("Fall \(i)")
+            terms.append("Summer \(i)")
+            terms.append("Spring \(i)")
+        }
+
+
+    }
+    func data() -> [Classes]{
+       var data : [Classes] = []
+        allClassesFetchedResults.filter{$0.isGroup == false}.forEach { data.append($0) }
+       return data
+     }
     func setup(){
 
+        let ns = UserDefaults()
+        if(ns.array(forKey: "letters") as? [[String]] != nil){
+            letters = (ns.array(forKey: "letters") as? [[String]])!
+
+        }
+        letterGen = PercentToGrade(letter: letters)
         if(self.productsStore.products.count > 0){
-            if(self.clas.count >= 3 && self.productsStore.products[0].status() == false){
-                self.dis.dis = true
+            if(self.allClassesFetchedResults.count >= 3 && self.productsStore.products[0].status() == false){
+                self.proPurchased.disable = true
                 let p = UserDefaults.init(suiteName: "group.com.benfein.ugrade")
                 p?.set(true, forKey: "purchased")                                     } else{
-                    self.dis.dis = false
+                    self.proPurchased.disable = false
                 }
         }
-        NotificationCenter.default.post(name: .my_onViewWillTransition, object: nil, userInfo: ["size": UIScreen.main.bounds])
+
+
 
     }
 
-    
     var body: some View {
         VStack{
-          //if (UIDevice.current.userInterfaceIdiom == .pad || UIDevice.current.userInterfaceIdiom == .mac){
-               if (UIDevice.current.userInterfaceIdiom == .pad){
+         //if (UIDevice.current.userInterfaceIdiom == .pad || UIDevice.current.userInterfaceIdiom == .mac){
+            if (UIDevice.current.userInterfaceIdiom == .pad){
                     GeometryReader{ geo in
-                if(self.productsStore.products.count > 0){
+                //if(self.productsStore.products.count > 0){
                     if(model.portrait){
 
                         NavigationView{
@@ -68,65 +99,10 @@ struct Home: View {
                                     
                                     
                                     // Fallback on earlier versions
-                                    ReuseHome(product: productsStore)
+                                    ReuseHome(product: productsStore).environmentObject(proPurchased)
                                         .onAppear(perform: setup)
 
-                                        .navigationBarItems(
-                                                            trailing:
-                                                                
-                                                                Section{
-                                                                    HStack{
-                                                                        Spacer()
-                                                                    if(self.dis.dis == false){
-                                                                Button(action: {self.shownew.toggle()}) {
-                                                                
-                                                                            
-                                                                            Text("New Course")
-                                                                                .fontWeight(.semibold)
-                                                                                .foregroundColor(.green)
 
-                                                                                .onAppear{
-                                                                                    setup()
-                                                                                
-                                                                    }
-                                                                                .sheet(isPresented: self.$shownew, onDismiss: setup){
-                                                                        NewClass()
-                                                                    }
-                                                                }
-
-                                                                    } else{
-                                                    
-                                                                                Button(action: {self.showpro.toggle()}) {
-                                                                                    Section{
-                                                                                            
-                                                                                            Text("Upgrade Today")
-                                                                                                .fontWeight(.bold)
-                                                                                                .foregroundColor(.red)
-                                                                                    
-                                                                                                .sheet(isPresented: self.$showpro, onDismiss: setup){
-                                                                                        RemoveAds()
-                                                                                    }
-                                                                                    }
-                                                                                    .onAppear{
-                                                                                    setup()
-                                                                                }
-                                                                                    .onDisappear{
-                                                                                        if(self.productsStore.products[0].status() == true){
-                                                                                            self.dis.dis = false
-                                                                                        }
-                                                                                    
-                                                                                
-                                                                                    }
-                                                                            
-                                                                                    }
-                                                                    }
-                                                                
-                                                                }
-                                                                }
-                                        
-                                        )
-                                    
-                                    
                                 }
                                 .navigationBarTitle("uGrade")
                             .background(Color(UIColor.systemGray6))
@@ -139,76 +115,39 @@ struct Home: View {
                         
                         NavigationView{
                                 VStack{
-                                    
-                                    
-                                    // Fallback on earlier versions
-                                    ReuseHome(product: productsStore)
+
+
+
+                                    ReuseHome(product: productsStore).environmentObject(proPurchased)
                                         .onAppear(perform: setup)
-                                       
-                                  
-                           
+
+                                }
+
+
+
+
+                                
+
+
                                 .navigationBarTitle("uGrade")
+                            .background(Color(UIColor.systemGray6))
+
+                        }
+                        .navigationViewStyle(DoubleColumnNavigationViewStyle())
+
+                    }
+
+
+
+
+
+
+
                            
-                                        .navigationBarItems(
-                                                            trailing:
-                                                                
-                                                                Section{
-                                                                    HStack{
-                                                                        Spacer()
-                                                                    if(self.dis.dis == false){
-                                                                Button(action: {self.shownew.toggle()}) {
-                                                                
-                                                                            
-                                                                            Text("New Course")
-                                                                                .fontWeight(.semibold)
-                                                                                .foregroundColor(.green)
 
-                                                                                .onAppear{
-                                                                                    setup()
-                                                                                
-                                                                    }
-                                                                                .sheet(isPresented: self.$shownew, onDismiss: setup){
-                                                                        NewClass()
-                                                                    }
-                                                                }
 
-                                                                    } else{
-                                                    
-                                                                                Button(action: {self.showpro.toggle()}) {
-                                                                                    Section{
-                                                                                            
-                                                                                            Text("Upgrade Today")
-                                                                                                .fontWeight(.bold)
-                                                                                                .foregroundColor(.red)
-                                                                                    
-                                                                                                .sheet(isPresented: self.$showpro, onDismiss: setup){
-                                                                                        RemoveAds()
-                                                                                    }
-                                                                                    }
-                                                                                    .onAppear{
-                                                                                    setup()
-                                                                                }
-                                                                                    .onDisappear{
-                                                                                        if(self.productsStore.products[0].status() == true){
-                                                                                            self.dis.dis = false
-                                                                                        }
-                                                                                    
-                                                                                
-                                                                                    }
-                                                                            
-                                                                                    }
-                                                                    }
-                                                                
-                                                                }
-                                                                }
-                                        
-                                        )
-                              
-
-                                 
                         
                           
-                        .navigationViewStyle(DoubleColumnNavigationViewStyle())
 
                     
                 
@@ -218,14 +157,8 @@ struct Home: View {
                             
                         
                         
-                    }
-                            Form{
-                                
-                            }
-                        
-                        }
-                        
-                    }
+
+
             
            
                    
@@ -236,84 +169,14 @@ struct Home: View {
                 
             }
                 
-                }
+              //  }
                     
                 } else{
                     VStack{
-                    if(self.productsStore.products.count > 0){
-
+                   // if(self.productsStore.products.count > 0){
+                        
                     NavigationView{
-                        GeometryReader{ geo in
-                            VStack{
-                                
-                                
-                                // Fallback on earlier versions
-                                ReuseHome(product: productsStore)
-                                    .onAppear(perform: setup)
-                                   
-                            
-                       
-                       
-
-                            }
-                    
-                            .navigationBarItems(
-                                                trailing:
-                                                    
-                                                    Section{
-                                                        HStack{
-                                                            Spacer()
-                                                        if(self.dis.dis == false){
-                                                    Button(action: {self.shownew.toggle()}) {
-                                                    
-                                                                
-                                                                Text("New Course")
-                                                                    .fontWeight(.semibold)
-                                                                    .foregroundColor(.green)
-
-                                                                    .onAppear{
-                                                                        setup()
-                                                                    
-                                                        }
-                                                                    .sheet(isPresented: self.$shownew, onDismiss: setup){
-                                                            NewClass()
-                                                        }
-                                                    }
-
-                                                        } else{
-                                        
-                                                                    Button(action: {self.showpro.toggle()}) {
-                                                                        Section{
-                                                                                
-                                                                                Text("Upgrade Today")
-                                                                                    .fontWeight(.bold)
-                                                                                    .foregroundColor(.red)
-                                                                        
-                                                                                    .sheet(isPresented: self.$showpro, onDismiss: setup){
-                                                                            RemoveAds()
-                                                                        }
-                                                                        }
-                                                                        .onAppear{
-                                                                        setup()
-                                                                    }
-                                                                        .onDisappear{
-                                                                            if(self.productsStore.products[0].status() == true){
-                                                                                self.dis.dis = false
-                                                                            }
-                                                                        
-                                                                    
-                                                                        }
-                                                                
-                                                                        }
-                                                        }
-                                                    
-                                                    }
-                                                    }
-                            
-                            )
-                            .onAppear(perform: setup)
-                          
-                            }
+                        ReuseHome(product: productsStore)
 
                         .navigationBarTitle("uGrade")
                     .background(Color(UIColor.systemGray6))
@@ -327,7 +190,7 @@ struct Home: View {
             }
                             
                             
-                        }
+                      //  }
                         
                         
                         
@@ -351,12 +214,19 @@ struct Home: View {
 
 
 
-//struct Home_Previews: PreviewProvider {
-//
-//
-//    static var previews: some View {
-//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-//        return Home().environment(\.managedObjectContext, context)
-//    }
-//}
+struct Home_Previews: PreviewProvider {
+
+    static var previews: some View {
+
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        ProductsStore.shared.initializeProducts()
+
+        let settings = Pro()
+        return Home( product: ProductsStore.shared).environmentObject(settings).environment(\.managedObjectContext, context)
+            .environmentObject(Model(isPortrait: UIScreen.main.bounds.width < UIScreen.main.bounds.height))
+
+
+    }
+}
+
 
