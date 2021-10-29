@@ -43,13 +43,11 @@
 		244EE88E24E88247004E2D25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 244EE81C24E8551C004E2D25 /* Assets.xcassets */; };
 		244EE88F24E88248004E2D25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 244EE81C24E8551C004E2D25 /* Assets.xcassets */; };
 		2461D6B6255F05B600E8B29D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2461D6B5255F05B600E8B29D /* Model.swift */; };
-		246A1DF12594FE6C00FE2A7D /* EditLetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246A1DF02594FE6C00FE2A7D /* EditLetters.swift */; };
 		246A1DF62594FE7E00FE2A7D /* PercentToGrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246A1DF52594FE7E00FE2A7D /* PercentToGrade.swift */; };
 		247FA31F24C3778C0096700E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 247FA31E24C3778C0096700E /* Preview Assets.xcassets */; };
 		247FA36324C37BDA0096700E /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247FA36224C37BDA0096700E /* CloudKit.framework */; };
-		247FA36524C37C050096700E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247FA36424C37C050096700E /* StoreKit.framework */; };
+		24898A2D26B5E208002382FD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24898A2C26B5E208002382FD /* StoreKit.framework */; };
 		24A251A1257D86C200E620E4 /* EditLetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A251A0257D86C200E620E4 /* EditLetters.swift */; };
-		24C56D84257D3681007402C9 /* PercentToGrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C56D83257D3681007402C9 /* PercentToGrade.swift */; };
 		24CEC86125B2176D0098E869 /* PercentToGrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C56D83257D3681007402C9 /* PercentToGrade.swift */; };
 		24CEC86525B217710098E869 /* GradeNeeded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2443D70C257FD8E700D9EBB9 /* GradeNeeded.swift */; };
 		24DFAED525813EF0001BC212 /* ReuseGradesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DFAED425813EF0001BC212 /* ReuseGradesView.swift */; };
@@ -154,6 +152,7 @@
 		247FA31E24C3778C0096700E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		247FA36224C37BDA0096700E /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		247FA36424C37C050096700E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		24898A2C26B5E208002382FD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/System/iOSSupport/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		24A251A0257D86C200E620E4 /* EditLetters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLetters.swift; sourceTree = "<group>"; };
 		24C56D83257D3681007402C9 /* PercentToGrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentToGrade.swift; sourceTree = "<group>"; };
 		24DFAED425813EF0001BC212 /* ReuseGradesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseGradesView.swift; sourceTree = "<group>"; };
@@ -187,7 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				247FA36324C37BDA0096700E /* CloudKit.framework in Frameworks */,
-				247FA36524C37C050096700E /* StoreKit.framework in Frameworks */,
+				24898A2D26B5E208002382FD /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +282,7 @@
 		247FA36124C37BDA0096700E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				24898A2C26B5E208002382FD /* StoreKit.framework */,
 				247AAB672563016300B593E2 /* StoreKitTest.framework */,
 				24EB11DE24C50B9D00D0CA59 /* CloudKit.framework */,
 				247FA36424C37C050096700E /* StoreKit.framework */,
@@ -397,7 +397,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1200;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1300;
 				ORGANIZATIONNAME = "Ben Fein";
 				TargetAttributes = {
 					247FA30E24C377880096700E = {
@@ -484,7 +484,6 @@
 				244EE84224E85520004E2D25 /* Classes.swift in Sources */,
 				244EE85524E85520004E2D25 /* NewClass.swift in Sources */,
 				244EE85A24E85520004E2D25 /* NewGrade.swift in Sources */,
-				246A1DF12594FE6C00FE2A7D /* EditLetters.swift in Sources */,
 				244EE85B24E85520004E2D25 /* EditClassView.swift in Sources */,
 				240C58C725868339008E5810 /* Classes+CoreDataProperties.swift in Sources */,
 				244EE85324E85520004E2D25 /* uGradeProducts.swift in Sources */,
@@ -497,7 +496,6 @@
 				244EE84B24E85520004E2D25 /* NewGroup.swift in Sources */,
 				2443D70D257FD8E700D9EBB9 /* GradeNeeded.swift in Sources */,
 				244EE85E24E85520004E2D25 /* GroupList.swift in Sources */,
-				24C56D84257D3681007402C9 /* PercentToGrade.swift in Sources */,
 				244EE86624E85593004E2D25 /* uGrade.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -619,10 +617,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -674,7 +672,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -692,18 +690,18 @@
 				CODE_SIGN_ENTITLEMENTS = uGrade/uGrade.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 96;
+				CURRENT_PROJECT_VERSION = 105;
 				DEVELOPMENT_ASSET_PATHS = "\"uGrade/Preview Content\"";
 				DEVELOPMENT_TEAM = JBRKK98ZG9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = uGrade/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 15.0;
+				MARKETING_VERSION = 16.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.benfein.ugrade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -722,18 +720,18 @@
 				CODE_SIGN_ENTITLEMENTS = uGrade/uGrade.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 96;
+				CURRENT_PROJECT_VERSION = 105;
 				DEVELOPMENT_ASSET_PATHS = "\"uGrade/Preview Content\"";
 				DEVELOPMENT_TEAM = JBRKK98ZG9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = uGrade/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 15.0;
+				MARKETING_VERSION = 16.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.benfein.ugrade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -749,7 +747,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "uGrade Watch Extension/uGrade Watch Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 96;
+				CURRENT_PROJECT_VERSION = 105;
 				DEVELOPMENT_ASSET_PATHS = "\"uGrade Watch Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = JBRKK98ZG9;
 				ENABLE_PREVIEWS = YES;
@@ -759,7 +757,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 15.0;
+				MARKETING_VERSION = 16.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.benfein.ugrade.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -776,7 +774,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "uGrade Watch Extension/uGrade Watch Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 96;
+				CURRENT_PROJECT_VERSION = 105;
 				DEVELOPMENT_ASSET_PATHS = "\"uGrade Watch Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = JBRKK98ZG9;
 				ENABLE_PREVIEWS = YES;
@@ -786,7 +784,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 15.0;
+				MARKETING_VERSION = 16.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.benfein.ugrade.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -807,7 +805,7 @@
 				CODE_SIGN_ENTITLEMENTS = "uGrade Watch/uGrade Watch.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 96;
+				CURRENT_PROJECT_VERSION = 105;
 				DEVELOPMENT_TEAM = JBRKK98ZG9;
 				IBSC_MODULE = uGrade_Watch_Extension;
 				INFOPLIST_FILE = "uGrade Watch/Info.plist";
@@ -816,7 +814,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				MARKETING_VERSION = 15.0;
+				MARKETING_VERSION = 16.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.benfein.ugrade.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -838,7 +836,7 @@
 				CODE_SIGN_ENTITLEMENTS = "uGrade Watch/uGrade Watch.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 96;
+				CURRENT_PROJECT_VERSION = 105;
 				DEVELOPMENT_TEAM = JBRKK98ZG9;
 				IBSC_MODULE = uGrade_Watch_Extension;
 				INFOPLIST_FILE = "uGrade Watch/Info.plist";
@@ -847,7 +845,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				MARKETING_VERSION = 15.0;
+				MARKETING_VERSION = 16.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.benfein.ugrade.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;

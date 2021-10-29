@@ -123,6 +123,7 @@ struct ReuseGradesView: View {
                                                     }
                                                     .onAppear(perform: self.setup)
                                                 }
+                                                .onDisappear(perform: self.setup)
                                             }
                                             .listRowBackground(self.color.genColor(grade: ((Double("\(gradess.grade!)")  ?? -100000) / (Double("\(gradess.total!)") ?? 1.0)) * 100.0))
                                         }
@@ -133,7 +134,7 @@ struct ReuseGradesView: View {
                                         context.delete(deleteItem)
                                         do {
                                             try context.save()
-                                            self.setup()
+
                                         } catch {
                                             print(error)
                                         }
@@ -198,6 +199,7 @@ struct ReuseGradesView: View {
                                                         }
                                                     }
                                                     .onAppear(perform: self.setup)
+                                                    .onDisappear(perform: self.setup)
                                                 }
                                             }
                                             .listRowBackground(self.color.genColor(grade: ((Double("\(gradess.grade!)")  ?? -100000) / (Double("\(gradess.total!)") ?? 1.0)) * 100.0))
@@ -209,7 +211,7 @@ struct ReuseGradesView: View {
                                         context.delete(deleteItem)
                                         do {
                                             try context.save()
-                                            self.setup()
+
                                         } catch {
                                             print(error)
                                         }

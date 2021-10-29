@@ -88,13 +88,13 @@ struct Home: View {
 
     var body: some View {
         VStack{
-         //if (UIDevice.current.userInterfaceIdiom == .pad || UIDevice.current.userInterfaceIdiom == .mac){
-            if (UIDevice.current.userInterfaceIdiom == .pad){
+            if (UIDevice.current.userInterfaceIdiom == .pad || UIDevice.current.userInterfaceIdiom == .mac){
+            //if (UIDevice.current.userInterfaceIdiom == .pad){
                     GeometryReader{ geo in
                 //if(self.productsStore.products.count > 0){
                     if(model.portrait){
 
-                        NavigationView{
+
                                 VStack{
                                     
                                     
@@ -108,12 +108,12 @@ struct Home: View {
                             .background(Color(UIColor.systemGray6))
                           
                                
-                        }
+
                         .navigationViewStyle(StackNavigationViewStyle())
                     
                     } else{
                         
-                        NavigationView{
+
                                 VStack{
 
 
@@ -132,7 +132,7 @@ struct Home: View {
                                 .navigationBarTitle("uGrade")
                             .background(Color(UIColor.systemGray6))
 
-                        }
+
                         .navigationViewStyle(DoubleColumnNavigationViewStyle())
 
                     }
@@ -175,7 +175,7 @@ struct Home: View {
                     VStack{
                    // if(self.productsStore.products.count > 0){
                         
-                    NavigationView{
+
                         ReuseHome(product: productsStore)
 
                         .navigationBarTitle("uGrade")
@@ -187,7 +187,7 @@ struct Home: View {
                     .navigationViewStyle(StackNavigationViewStyle())
 
 
-            }
+            
                             
                             
                       //  }
