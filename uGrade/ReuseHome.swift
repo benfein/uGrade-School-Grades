@@ -66,196 +66,91 @@ struct ReuseHome: View {
         
     }
     var body: some View {
-        VStack{
+        NavigationView{
+            VStack{
 
-
-                    if #available(iOS 14.0, *) {
-
-                            List{
-                                ForEach(self.terms, id: \.self){ i in
-                                    if(allClassesFetchedResults.contains{$0.term == i}){
-                                    Section(header:Text(i)){
-                                        ForEach(self.allClassesFetchedResults.filter{$0.term == i}, id: \.self) { cl in
-                                    Section{
-                                        HStack{
-                                            if(cl.isWeight == false){
-                                                NavigationLink(destination: GradesView(currentID: cl.id!,currentName: cl.classname!,currentClass: cl)) {
-                                                    ClassRow(className: "\(cl.classname!)", classGrade:"\((((Double(cl.grade!) ?? 0.00) / (Double(cl.total!) ?? 1.0))) * 100.0)", id: cl.id!, letter: letterGen.getLetter(grade:"\((((Double(cl.grade!) ?? -1.00) / (Double(cl.total!) ?? 1.0))) * 100.0)"))
-                                                }
-                                            } else{
-                                                NavigationLink(destination: GroupList(currentClassID: cl.id!,currentClassName: cl.classname!,currentClass: cl, productsStore: self.productsStore)) {
-                                                    ClassRow(className: "\(cl.classname!)", classGrade: "\(cl.grade!)", id: cl.id!, letter: letterGen.getLetter(grade: "\((Double(cl.grade!) ?? -1.00))"))
-                                                }
+                        List{
+                            ForEach(self.terms, id: \.self){ i in
+                                if(allClassesFetchedResults.contains{$0.term == i}){
+                                Section(header:Text("\(i)")){
+                                    ForEach(self.allClassesFetchedResults.filter{$0.term == i}, id: \.self) { cl in
+                                Section{
+                                    HStack{
+                                        if(cl.isWeight == false){
+                                            NavigationLink(destination: GradesView(currentID: cl.id!,currentName: cl.classname!,currentClass: cl)) {
+                                                ClassRow(className: "\(cl.classname!)", classGrade:"\((((Double(cl.grade!) ?? 0.00) / (Double(cl.total!) ?? 1.0))) * 100.0)", id: cl.id!, letter: letterGen.getLetter(grade:"\((((Double(cl.grade!) ?? -1.00) / (Double(cl.total!) ?? 1.0))) * 100.0)"))
+                                            }
+                                        } else{
+                                            NavigationLink(destination: GroupList(currentClassID: cl.id!,currentClassName: cl.classname!,currentClass: cl, productsStore: self.productsStore)) {
+                                                ClassRow(className: "\(cl.classname!)", classGrade: "\(cl.grade!)", id: cl.id!, letter: letterGen.getLetter(grade: "\((Double(cl.grade!) ?? -1.00))"))
                                             }
                                         }
-                                    }  .onAppear{
-                                        setup()
-                                      }
-                                      .onDisappear{
-                                          setup()
-                                      }
-                                    .listRowBackground(self.color.genColor(grade: ((Double("\(cl.grade!)")  ?? -1.0) / (Double("\(cl.total!)") ?? 1.0)) * 100.0))
-                                    .listRowInsets(.init(top: 15, leading: 20, bottom: 15, trailing: 20))
+                                    }
+                                }   .onAppear{
+                                  setup()
                                 }
-                                .onDelete { indexSet in
-                                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                                    let context = appDelegate.persistentContainer.viewContext
-                                    let allGroupsInClass = NSFetchRequest<Classes>(entityName: "Classes")
-                                    let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-                                    allGroupsInClass.predicate = NSPredicate(format: "asc == %@ ", self.allClassesFetchedResults.filter{$0.term == i}[indexSet.first!].id! as CVarArg)
-                                    var r: [Classes] = [Classes]()
-                                    managedObjectContext.perform{
-                                        r = try! allGroupsInClass.execute()
-                                    }
-                                    for i in r {
-                                        let allGradesInGroup = NSFetchRequest<NSFetchRequestResult>(entityName: "Grades")
-                                        allGradesInGroup.predicate = NSPredicate(format: "asc == %@ ", i.id! as CVarArg)
-                                        let deleteRequest = NSBatchDeleteRequest(fetchRequest: allGradesInGroup)
-                                        do {
-                                            try context.execute(deleteRequest)
-                                        } catch let error as NSError {
-                                            print(error)
-                                        }
-                                    }
-                                    let deleteRequest = NSBatchDeleteRequest(fetchRequest: allGroupsInClass as! NSFetchRequest<NSFetchRequestResult>)
+                                .onDisappear{
+                                    setup()
+                                }
+                                .listRowBackground(self.color.genColor(grade:((Double(cl.grade!) ?? -100000.00) / (Double(cl.total!) ?? 1.0) * 100.00)))
+                                .listRowInsets(.init(top: 15, leading: 20, bottom: 15, trailing: 20))
+
+                            }
+                            .onDelete { indexSet in
+                                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                                let context = appDelegate.persistentContainer.viewContext
+                                let fetch = NSFetchRequest<Classes>(entityName: "Classes")
+                                let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+                                fetch.predicate = NSPredicate(format: "asc == %@ ", self.allClassesFetchedResults.filter{$0.term == i}[indexSet.first!].id! as CVarArg)
+                                var r: [Classes] = [Classes]()
+                                managedObjectContext.perform{
+                                    r = try! fetch.execute()
+                                }
+                                for i in r {
+                                    let fetchs = NSFetchRequest<NSFetchRequestResult>(entityName: "Grades")
+                                    fetchs.predicate = NSPredicate(format: "asc == %@ ", i.id! as CVarArg)
+                                    let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchs)
                                     do {
                                         try context.execute(deleteRequest)
                                     } catch let error as NSError {
                                         // TODO: handle the error
                                         print(error)
                                     }
-                                    let deleteItem = self.allClassesFetchedResults.filter{$0.term == i}[indexSet.first!]
-                                    context.delete(deleteItem)
-                                    do {
-                                        try context.save()
-                                    } catch {
-                                        print(error)
-                                    }
                                 }
-                                .onAppear(perform: self.setup)
-                            }
-                                    }//end of if
-                             } //end of groups
+                                let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetch as! NSFetchRequest<NSFetchRequestResult>)
+                                do {
+                                    try context.execute(deleteRequest)
+                                } catch let error as NSError {
+                                    // TODO: handle the error
+                                    print(error)
+                                }
+                                let deleteItem = self.allClassesFetchedResults.filter{$0.term == i}[indexSet.first!]
+                                context.delete(deleteItem)
+                                do {
+                                    try context.save()
+                                } catch {
+                                    print(error)
+                                }
                             }
                             .onAppear(perform: self.setup)
-                            .listStyle(InsetGroupedListStyle())
-                            .environment(\.horizontalSizeClass, .regular)
-
-
-
-        } else {
-            // Fallback on earlier versions
-
-                List{
-                    ForEach(self.terms, id: \.self){ i in
-                        if(allClassesFetchedResults.contains{$0.term == i}){
-                        Section(header:Text(i)){
-                            ForEach(self.allClassesFetchedResults.filter{$0.term == i}, id: \.self) { cl in
-                        Section{
-                            HStack{
-                                if(cl.isWeight == false){
-                                    NavigationLink(destination: GradesView(currentID: cl.id!,currentName: cl.classname!,currentClass: cl)) {
-                                        ClassRow(className: "\(cl.classname!)", classGrade:"\((((Double(cl.grade!) ?? 0.00) / (Double(cl.total!) ?? 1.0))) * 100.0)", id: cl.id!, letter: letterGen.getLetter(grade:"\((((Double(cl.grade!) ?? -1.00) / (Double(cl.total!) ?? 1.0))) * 100.0)"))
-                                    }
-                                } else{
-                                    NavigationLink(destination: GroupList(currentClassID: cl.id!,currentClassName: cl.classname!,currentClass: cl, productsStore: self.productsStore)) {
-                                        ClassRow(className: "\(cl.classname!)", classGrade: "\(cl.grade!)", id: cl.id!, letter: letterGen.getLetter(grade: "\((Double(cl.grade!) ?? -1.00))"))
-                                    }
-                                }
-                            }
-                        }   .onAppear{
-                          setup()
                         }
-                        .onDisappear{
-                            setup()
+                                }//end of if
+                         } //end of groups
                         }
-                        .listRowBackground(self.color.genColor(grade: ((Double("\(cl.grade!)")  ?? 0.0) / (Double("\(cl.total!)") ?? 1.0)) * 100.0))
-                        .listRowInsets(.init(top: 15, leading: 20, bottom: 15, trailing: 20))
-                    }
-                    .onDelete { indexSet in
-                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                        let context = appDelegate.persistentContainer.viewContext
-                        let fetch = NSFetchRequest<Classes>(entityName: "Classes")
-                        let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-                        fetch.predicate = NSPredicate(format: "asc == %@ ", self.allClassesFetchedResults.filter{$0.term == i}[indexSet.first!].id! as CVarArg)
-                        var r: [Classes] = [Classes]()
-                        managedObjectContext.perform{
-                            r = try! fetch.execute()
-                        }
-                        for i in r {
-                            let fetchs = NSFetchRequest<NSFetchRequestResult>(entityName: "Grades")
-                            fetchs.predicate = NSPredicate(format: "asc == %@ ", i.id! as CVarArg)
-                            let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchs)
-                            do {
-                                try context.execute(deleteRequest)
-                            } catch let error as NSError {
-                                // TODO: handle the error
-                                print(error)
-                            }
-                        }
-                        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetch as! NSFetchRequest<NSFetchRequestResult>)
-                        do {
-                            try context.execute(deleteRequest)
-                        } catch let error as NSError {
-                            // TODO: handle the error
-                            print(error)
-                        }
-                        let deleteItem = self.allClassesFetchedResults.filter{$0.term == i}[indexSet.first!]
-                        context.delete(deleteItem)
-                        do {
-                            try context.save()
-                        } catch {
-                            print(error)
-                        }
-                    }
-                    .onAppear(perform: self.setup)
-                }
-                        }//end of if
-                 } //end of groups
-                }
-                .onAppear(perform: self.setup)
-                .listStyle(GroupedListStyle())
-                .environment(\.horizontalSizeClass, .regular)
+                        .padding(.bottom)
+                        .listStyle(InsetGroupedListStyle())
+                        .environment(\.horizontalSizeClass, .regular)
 
 
 
-        }
+                        .navigationBarTitle("uGrade")
+                        .navigationBarItems(leading: Section{
+                            if(self.productsStore.products.count > 0){
+                                if(self.productsStore.products[0].status() == true){
+                                Button(action: {self.showChangeLetters.toggle()}) {
 
 
-        }
-
-        .navigationBarItems(leading: Section{
-            if(self.productsStore.products.count > 0){
-                if(self.productsStore.products[0].status() == true){
-                Button(action: {self.showChangeLetters.toggle()}) {
-
-
-                            Text("Edit Letters")
-                                .fontWeight(.semibold)
-                                .foregroundColor(.green)
-
-                                .onAppear{
-                                    setup()
-
-                    }
-                                .sheet(isPresented: self.$showChangeLetters, onDismiss: setup){
-                                    EditLetters(letters: letters)
-                    }
-            }
-            }
-            }
-        },
-                            trailing:
-                                Section{
-        if(self.productsStore.products.count > 0){
-                                Section{
-                                    HStack{
-                                        Spacer()
-                                    if(self.proPurchased.disable == false){
-                                Button(action: {self.showNewClass.toggle()}) {
-
-
-                                            Text("New Course")
+                                            Text("Edit Letters")
                                                 .fontWeight(.semibold)
                                                 .foregroundColor(.green)
 
@@ -263,44 +158,75 @@ struct ReuseHome: View {
                                                     setup()
 
                                     }
-                                                .sheet(isPresented: self.$showNewClass, onDismiss: setup){
-                                        NewClass()
+                                                .sheet(isPresented: self.$showChangeLetters, onDismiss: setup){
+                                                    EditLetters(letters: letters)
                                     }
-                                }
+                            }
+                            }
+                            }
+                        },
+                                            trailing:
+                                                Section{
+                        if(self.productsStore.products.count > 0){
+                                                Section{
+                                                    HStack{
+                                                        Spacer()
+                                                    if(self.proPurchased.disable == false){
+                                                Button(action: {self.showNewClass.toggle()}) {
 
-                                    } else{
-                                                Button(action: {self.showGetPro.toggle()}) {
-                                                    Section{
 
-                                                            Text("Upgrade Today")
-                                                                .fontWeight(.bold)
-                                                                .foregroundColor(.red)
+                                                            Text("New Course")
+                                                                .fontWeight(.semibold)
+                                                                .foregroundColor(.green)
 
-                                                                .sheet(isPresented: self.$showGetPro, onDismiss: setup){
-                                                                    RemoveAds().environmentObject(proPurchased)
+                                                                .onAppear{
+                                                                    setup()
+
                                                     }
+                                                                .sheet(isPresented: self.$showNewClass, onDismiss: setup){
+                                                        NewClass()
                                                     }
-                                                    .onAppear{
-                                                    setup()
                                                 }
-                                                    .onDisappear{
-                                                        if(self.productsStore.products[0].status() == true){
-                                                            self.proPurchased.disable = false
-                                                        }
+
+                                                    } else{
+                                                                Button(action: {self.showGetPro.toggle()}) {
+                                                                    Section{
+
+                                                                            Text("Upgrade Today")
+                                                                                .fontWeight(.bold)
+                                                                                .foregroundColor(.red)
+
+                                                                                .sheet(isPresented: self.$showGetPro, onDismiss: setup){
+                                                                                    RemoveAds().environmentObject(proPurchased)
+                                                                    }
+                                                                    }
+                                                                    .onAppear{
+                                                                    setup()
+                                                                }
+                                                                    .onDisappear{
+                                                                        if(self.productsStore.products[0].status() == true){
+                                                                            self.proPurchased.disable = false
+                                                                        }
 
 
+
+                                                                }
+
+                                                                    }
+                                                    }
 
                                                 }
+                                                }
 
-                                                    }
-                                    }
+                        }
+                                                }
+                        )
 
-                                }
-                                }
+
+            }
 
         }
-                                }
-        )
+
 
 
 

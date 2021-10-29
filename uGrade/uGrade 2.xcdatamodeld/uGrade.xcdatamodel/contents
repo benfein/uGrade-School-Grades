@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="uGrade">
+    <entity name="Classes" representedClassName="Classes" syncable="YES">
+        <attribute name="asc" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="classname" optional="YES" attributeType="String" defaultValueString=""/>
+        <attribute name="grade" optional="YES" attributeType="String" defaultValueString=""/>
+        <attribute name="gradeWanted" optional="YES" attributeType="String" defaultValueString="90.0"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isGroup" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isWeight" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="percent" optional="YES" attributeType="String" defaultValueString=""/>
+        <attribute name="term" optional="YES" attributeType="String" defaultValueString="No Term"/>
+        <attribute name="total" optional="YES" attributeType="String" defaultValueString=""/>
+        <attribute name="totalGrade" optional="YES" attributeType="String" defaultValueString="0"/>
+    </entity>
+    <entity name="Grades" representedClassName="Grades" syncable="YES" codeGenerationType="class">
+        <attribute name="asc" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="grade" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isWeight" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="total" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Groups" representedClassName="Groups" syncable="YES" codeGenerationType="class">
+        <attribute name="asc" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="grade" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="total" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Classes" positionX="-54" positionY="-9" width="128" height="194"/>
+        <element name="Grades" positionX="-36" positionY="36" width="128" height="133"/>
+        <element name="Groups" positionX="-18" positionY="81" width="128" height="118"/>
+    </elements>
+</model>
